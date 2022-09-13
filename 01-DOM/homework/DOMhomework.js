@@ -8,6 +8,8 @@ var toDoItems = [];
 // Tu código acá:
 
 document.querySelector('#createdBy').innerHTML += ' Victor';
+// var span =  document.querySelector('#createdBy');
+// span.innerHTML += ' Victor';
 
 
 
@@ -37,9 +39,15 @@ class ToDo {
 
 // Tu código acá:
 
-ToDo.prototype.completeToDo = function() {return this.complete = true;}
+// ToDo.prototype.completeToDo = function() {return this.complete = true;}
 
-
+ToDo.prototype.completeToDo = function() {
+  if (this.complete === false) {
+    return this.complete = true;
+  }else{
+    return this.complete = false;
+  }
+}
 
 // Agregar dos parámetros a la función 'buildToDo':
 //    1) Un objeto de la clase ToDo
@@ -62,21 +70,37 @@ ToDo.prototype.completeToDo = function() {return this.complete = true;}
 function buildToDo(todo, index) {
   // Tu código acá:
 
-  var toDoShell = document.createElement('div'); // 1) Crear un elemento 'div' y asignárselo a una variable denominada 'toDoShell'
-  toDoShell.className = 'toDoShell'; // 2) Asignarle a 'toDoShell' la clase 'toDoShell'
+  //a) Crer un checkbox en la función 'buildToDo'
+  let checkbox = document.createElement('input');
+  checkbox.type = "checkbox";
+  //b) Asignarle como id a dicho checkbox el valor del index y quitar el id del index de toDoText
+  checkbox.id = index;
+  //c) Agregarle al checkbox el 'click' event listener de completeToDo y quitárle el event listener a toDoText
+  checkbox.addEventListener('click', completeToDo);
+  //d) Asignarle la clase 'completeCheckbox' al checkbox
+  checkbox.className = 'completeCheckbox';
+  //e) Dentro del bloque 'if' de la función buildToDo, si es true, setear el atributo 'checked' en true en el checkbox
 
-  var toDoText = document.createElement('span'); // 3) Crear un elemento 'span' y asignárselo a una variable denominada 'toDoText'
-  toDoText.innerHTML = todo.description;// 4) Utilizando el objeto toDo pasado como argumento, setear el 'toDoText' innerHTML
-  toDoText.id = index; // 5) Asignarle como id del 'toDoText' el valor 'index' recibido como argumento
 
-  if (todo.complete === true) { // 6) En función del atributo 'complete' del objeto ToDo recibido como argumento:
+  let toDoShell = document.createElement('div'); 
+  toDoShell.className = 'toDoShell';
+  let toDoText = document.createElement('span'); 
+  toDoText.innerHTML = todo.description;
+  // toDoText.id = index; 
+
+  if (todo.complete === true) { 
     toDoText.className = 'completeText';
+    checkbox.checked = true;
   }
 
-  toDoShell.appendChild(toDoText); // 7) Agregar 'toDoText' como hijo de 'toDoShell'
+  toDoShell.appendChild(toDoText); 
+   // f) Agregar el checkbox sobre el elemento 'toDoShell'
+  toDoShell.appendChild(checkbox);
+  // toDoText.addEventListener('click', completeToDo);
 
-  return toDoShell; // 8) Devolver la variable toDoShell
+  return toDoShell; 
 }
+
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
 // Recibirá como parámetro un array de objetos ToDo
@@ -86,7 +110,7 @@ function buildToDo(todo, index) {
 function buildToDos(toDos) {
   // Tu código acá:
 
-  var array = toDos.map(buildToDo);
+  let array = toDos.map(buildToDo);
 
   return array;
 
@@ -105,12 +129,16 @@ function buildToDos(toDos) {
 function displayToDos() {
   // Tu código acá:
 
-  var toDoContainer = document.getElementById('toDoContainer');
+  let toDoContainer = document.getElementById('toDoContainer');
   toDoContainer.innerHTML = ""; 
-  var array = buildToDos(toDoItems); 
-  array.forEach(function(element) { 
-    toDoContainer.appendChild(element);//
-  }); 
+  let array = buildToDos(toDoItems); 
+  //array.forEach(element => toDoContainer.appendChild(element));
+  // array.forEach(function(element) { 
+  //   toDoContainer.appendChild(element);//
+  // }); 
+  for (let i = 0; i < array.length; i++) {
+    toDoContainer.appendChild(array[i]);
+  }
 }
 
 
@@ -126,12 +154,13 @@ function displayToDos() {
 function addToDo() {
   // Tu código acá:
 
-  var toDoInput = document.getElementById('toDoInput');
-  var toDo = new ToDo (toDoInput.value); 
+  let toDoInput = document.getElementById('toDoInput');
+  if (toDoInput.value !== ""){ //El if es para que no agrege elementos vacios
+  let toDo = new ToDo (toDoInput.value); 
   toDoItems.push(toDo); 
   toDoInput.value = ""; 
   displayToDos();
-
+  }
 }
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
