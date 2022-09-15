@@ -179,6 +179,9 @@ p {
     font-size: 1.5em;
   }
 }
+#navbar ul li a:hover {
+  color: #4677ff;
+}
 #nav-conteiner {
   position: fixed;
   display: inline-block;
@@ -302,7 +305,7 @@ footer {
   background-color: black;
   border-radius: 7px;
   color: #fff;
-  width: 80px;
+  width: 85px;
   height: 30px;
 }
 @media (max-width: 500px) {
@@ -312,10 +315,17 @@ footer {
     margin-bottom: 15px;
   }
 }
+.home .actual .actual-text .btn a {
+  color: #fff;
+  text-decoration: none;
+}
 .home .actual .btn:hover {
   background-color: #363b4d;
   color: #fff;
   cursor: pointer;
+}
+.home .actual .btn:hover a {
+  color: #ececec;
 }
 .home .actual .actual-img {
   width: 46%;
