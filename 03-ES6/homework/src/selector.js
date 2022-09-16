@@ -61,7 +61,7 @@ var matchFunctionMaker = function(selector) {//invoca la funcion anterior, me re
 
   var matchFunction;
   if (selectorType === "id") { //si es id
-    return el => {//matchFunction es una funcion que recibe un elemento y devuelve true o false
+    matchFunction = el => {//matchFunction es una funcion que recibe un elemento y devuelve true o false
       return '#' + el.id === selector//se compara el elemento html vs el selector
     }
   
