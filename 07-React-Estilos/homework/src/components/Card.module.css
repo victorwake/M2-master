@@ -1,0 +1,55 @@
+.cardImg{
+  height: 70px;
+  width: 70px;
+}
+
+.card{
+  margin: 20px;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.61);
+  /* background-image: url ("https://img.myloview.es/cuadros/cielo-y-nubes-dibujos-animados-de-fondo-nublado-escena-del-cielo-con-cielo-azul-y-nubes-blancas-ilustracion-vectorial-escena-de-fondo-nube-cielo-nublado-cumulo-en-el-aire-400-147194626.jpg"); */
+
+}
+
+.card:hover{
+  box-shadow: 0 0 15px 1px rgba(0, 140, 255, 0.61);
+  transform: scale(1.05);
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+
+
+.cardBody{
+  margin: 5px;
+  padding: 15px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0px rgba(0, 140, 255, 0.61);
+
+  
+}
+
+.ciudades{
+  display: flex; /*Convertimos al menú en flexbox*/
+  justify-content: space-between; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
+  align-items: center; /*con esto alineamos de manera vertical*/
+
+}
+
+.temperaturas{
+  display: flex; /*Convertimos al menú en flexbox*/
+  justify-content: space-between; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
+  align-items: center; /*con esto alineamos de manera vertical*/
+
+}
+
+.btnClouse{
+  color: white;
+  background-color: rgba(243, 46, 46, 0.781);
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 25px;
+}

@@ -1,0 +1,14 @@
+.cards{
+    display: flex; /*Convertimos al menú en flexbox*/
+    justify-content: space-between; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
+    align-items: center; /*con esto alineamos de manera vertical*/
+  }
+
+  @media screen and (max-width: 960px) {
+    .cards{
+      flex-direction: column;
+    }
+
+  }
+    
+
