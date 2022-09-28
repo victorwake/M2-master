@@ -1,16 +1,21 @@
 import React, { useState } from "react";
+import './searchBar.css';
 
 export default function SearchBar({onSearch}) {
+  const searchClic = () => {
+    return onSearch.onSearch("Buscando...");
+  }
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      onSearch("Cairns");
-    }}>
-      <input
-        type="text"
-        placeholder="Ciudad..."
-      />
-      <input type="submit" value="Agregar" />
-    </form>
+    <div class="search">
+      <div class="form-inline md-form mr-auto mb-4">
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="Ciudad..."
+          aria-label="Search"
+        />
+        <button onClick={searchClic} class="btn btn-success">Search</button>
+      </div>
+    </div>
   );
 }

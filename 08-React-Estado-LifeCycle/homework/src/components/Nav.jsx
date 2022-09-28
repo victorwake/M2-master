@@ -3,10 +3,18 @@ import Logo from '../logoHenry.png'
 import SearchBar from './SearchBar.jsx';
 import './Nav.css';
 
-function Nav({onSearch}) {
+export function Nav({onSearch}) {
   return (
-    <div>Nav</div>
-  );
+  <nav class="navbar">
+  <div class="container-fluid">
+  <img class="navbar-brand" src={Logo} alt='logo'/>
+  <h1>Henry - Weather App</h1>
+    <form class="d-flex">
+    <SearchBar/>
+    </form>
+  </div>
+</nav>
+  )
 };
 
-export default Nav;
+// export default Nav;

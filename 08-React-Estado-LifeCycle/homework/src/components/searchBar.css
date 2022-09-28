@@ -1,0 +1,32 @@
+.btn{
+    background-color: rgba(43, 43, 43, 0.932);
+    color: rgb(20, 117, 0);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px rgb(20, 117, 0);
+    font-weight: arial;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    
+
+}
+
+.btn:hover{
+    background-color: rgb(20, 117, 0);
+    box-shadow: 0 0 10px 0px rgb(0, 140, 255);
+
+}
+
+.form-inline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
