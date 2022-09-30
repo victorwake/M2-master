@@ -9,8 +9,6 @@
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.61);
-  /* background-image: url ("https://img.myloview.es/cuadros/cielo-y-nubes-dibujos-animados-de-fondo-nublado-escena-del-cielo-con-cielo-azul-y-nubes-blancas-ilustracion-vectorial-escena-de-fondo-nube-cielo-nublado-cumulo-en-el-aire-400-147194626.jpg"); */
-
 }
 
 .card:hover{
@@ -27,8 +25,6 @@
   border: 1px solid #c7c7c7;
   border-radius: 5px;
   box-shadow: 0 0 5px 0px rgba(0, 140, 255, 0.61);
-
-  
 }
 
 .ciudades{

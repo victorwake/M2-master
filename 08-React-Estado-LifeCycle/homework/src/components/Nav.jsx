@@ -5,16 +5,16 @@ import './Nav.css';
 
 export function Nav({onSearch}) {
   return (
-  <nav class="navbar">
+    <nav class="navbar">
   <div class="container-fluid">
   <img class="navbar-brand" src={Logo} alt='logo'/>
   <h1>Henry - Weather App</h1>
     <form class="d-flex">
-    <SearchBar/>
+    <SearchBar onSearch={onSearch}/>
     </form>
   </div>
 </nav>
   )
 };
 
-// export default Nav;
+
