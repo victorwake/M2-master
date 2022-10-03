@@ -1,17 +1,19 @@
 import React from 'react';
 import Logo from '../logoHenry.png'
-import SearchBar from './SearchBar.jsx';
+import SearchBar from './SearchBar';
+import SearchBarSolo from './SearchBarSolo';
 import './Nav.css';
 
-export function Nav({onSearch}) {
+export function Nav({onSearch , onSearchSolo}) {
   return (
-    <nav class="navbar">
-  <div class="container-fluid">
-  <img class="navbar-brand" src={Logo} alt='logo'/>
+    <nav className="navbar">
+  <div className="container-fluid">
+  <img className="navbar-brand" src={Logo} alt='logo'/>
   <h1>Henry - Weather App</h1>
-    <form class="d-flex">
+    <div className="d-flex">
     <SearchBar onSearch={onSearch}/>
-    </form>
+    <SearchBarSolo onSearchSolo={onSearchSolo}/>
+    </div>
   </div>
 </nav>
   )

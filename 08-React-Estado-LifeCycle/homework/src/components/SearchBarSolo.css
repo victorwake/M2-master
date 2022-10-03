@@ -1,0 +1,37 @@
+.btn1{
+    background-color: rgba(43, 43, 43, 0.932);
+    color: rgb(18, 176, 224);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: solid 1px rgb(17, 124, 156);
+    font-weight: arial;
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    
+
+}
+
+.btn1:hover{
+    background-color: rgb(21, 228, 255);
+    box-shadow: 0 0 10px 0px rgb(41, 197, 10);
+    color: black;
+
+}
+
+.form-inline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.form-control{
+    margin-left: 30px;
+}

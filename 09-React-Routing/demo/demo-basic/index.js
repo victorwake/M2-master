@@ -17,10 +17,10 @@ function Home() {
 const Root = (
   <Router>
     <NavBar />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+    {/* <Switch> */}
+      <Route exact path="/" render={()=><Home />} />
+        {/* <Home />
+      </Route> */}
       {/* <Route path="/about/other">
         <h2>About Other</h2>
       </Route> */}
@@ -39,7 +39,7 @@ const Root = (
       <Route path="/">
         <h2>Default if no match</h2>
       </Route>
-    </Switch>
+    {/* </Switch> */}
   </Router>
 );
 

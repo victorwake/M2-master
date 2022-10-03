@@ -1,13 +1,13 @@
 import React from "react";
-import "./SearchBar.css";
+import "./SearchBarSolo.css";
 
-export default function SearchBar({onSearch}) {
+export default function SearchBar({onSearchSolo}) {
   const [city, setCity] = React.useState("");
   return (
     <div>
     <form onSubmit={(event) => {
       event.preventDefault(); //evita que se recargue la pagina
-      onSearch(city); //ejecuta la funcion onSearch que recibe por props
+      onSearchSolo(city); //ejecuta la funcion onSearch que recibe por props
       setCity(''); //limpia el input
     }}>
     <div className="search">
@@ -19,7 +19,7 @@ export default function SearchBar({onSearch}) {
         value={city} //el valor del input es el estado de la variable city
         onChange={event => setCity(event.target.value)} //actualiza el estado de city
       />
-      <input className="btn btn-success" type="submit" value="Listar" 
+      <input className="btn1 btn-success" type="submit" value="Buscar" 
       />
       </div>
     </div>
