@@ -4,7 +4,7 @@ import "./App.css";
 import Nav from "../components/Nav.jsx";
 import Cards from "../components/Cards.jsx";
 import About from "../components/About.jsx";
-import Ciudad from "../components/Ciudad.jsx";
+import City from "../components/City.jsx";
 
 
 const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
@@ -42,7 +42,7 @@ function App() {
       });
   }
   function onFilter(ciudadId) {
-    let ciudad = cities.filter((c) => c.id === parseInt(ciudadId));
+    let ciudad = cities.filter((c) => c.id === parseInt(ciudadId)); //el parseInt convierte el string que llega por url a numero
     if (ciudad.length > 0) {
       return ciudad[0];
     } else {
@@ -50,13 +50,16 @@ function App() {
     }
   }
   return (
- 
+
     <div className="App">
-    <Route path={"/"} render={() => <Nav onSearch={onSearch} />}></Route>
-    <Route exact path="/about" component={About} />
+    <Route path={"/"} render={() => <Nav onSearch={onSearch} />} />
+    <div className="AppAbout">
+    <Route exact path="/about" render={()=> <About onClose={onClose}/>} />
+    </div>
     <Route exact path={"/"} render={() => <Cards cities={cities} onClose={onClose} />} />
-    <Route exact path="/ciudad/:ciudadId" render={({match}) => <Ciudad onClose={onClose} city={cities.filter(c => c.id === parseInt(match.params.ciudadId))}/>} />
-  </div>
+    <Route exact path="/city/:cityId" render={({match}) => <City city={onFilter(match.params.cityId)} />} />
+                               {/* {// match trae el valor por url id} */}
+  </div>   
 );
 }
 

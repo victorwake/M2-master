@@ -1,0 +1,12 @@
+.about{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(219, 219, 219);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border: solid 1px #eee;
+    width: 400px;
+    height: 300px;
+    margin-top: 30px;
+}
