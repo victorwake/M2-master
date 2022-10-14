@@ -1,5 +1,7 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
+export const INCREMENT_ASYNC = 'INCREMENT_ASYNC';
 
 // Nuestras actions (action creators) devolverán un paquete de actions que nuestro reducer recibirá. 
 // ¿Cómo es el paquete de acción? Tengan en cuenta que el creador de la acción no es en absoluto responsable 
@@ -7,9 +9,25 @@ export const DECREMENT = 'DECREMENT';
 // Eso se lo deja al reducer(s).
 
 export const increment = () => {
-  // Completa la funcion
+  return {
+    type: INCREMENT
+  }
 };
 
 export const decrement = () => {
-  // Completa la funcion
+  return {
+    type: DECREMENT
+  }
 };
+
+export const incrementIfOdd = () => {
+  return {
+    type: INCREMENT_IF_ODD
+  }
+}
+  
+export const incrementAsync = () => {
+  return {
+    type: INCREMENT_ASYNC
+  }  
+}

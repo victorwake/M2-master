@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { increment, decrement } from '../actions';
+import { increment, decrement, incrementIfOdd, incrementAsync } from '../actions';
 
 class Counter extends Component {
     // Extra Credit
     incrementIfOdd = () => {
       //Implementar una función de incremento que sólo aumenta si el valor del contador es impar
+        this.props.count % 2 !== 0 ? this.props.increment() : null;
     };
     // Extra Credit
     incrementAsync = () => {
         //  Implementar una función de incremento que aumenta después de esperar un segundo
+        setTimeout(() => {
+            this.props.increment();
+        }
+        , 3000);
     };
 
     render() {
@@ -18,19 +23,18 @@ class Counter extends Component {
         return (
             <p>
                 Clickeado: {this.props.count} veces
-                <button onClick={() => {/* Completar */ }}>
+                <button onClick={() => {this.props.increment()}}>
                     + {/* Incremeta */}
                 </button>
-                <button onClick={() => {/* Completar */ }}>
+                <button onClick={this.props.decrement}>
                     -  {/* Decrementa */}
                 </button>
-                 {/* Si quieres hacer los extra credit puede descomentar las lineas de abajo */}
-                {/* <button onClick={this.incrementIfOdd}>
-                    incrementa si es impar
+                <button onClick={this.incrementIfOdd}>
+                    Incrementar si es impar
                 </button>
                 <button onClick={this.incrementAsync}>
-                    Incrementa despues de un segundos
-                </button>  */}
+                    Incrementar asincrónicamente
+                </button>
             </p>
         );
     }
@@ -51,7 +55,7 @@ const mapStateToProps = (state) => {
 // Sin esto, este componente es sólo un componente tonto de React.
 //Pasamos todas las funciones que dependen de Redux, junto con el propio componente,
 // para que Redux se dé a conocer a este componente.
-export default connect(mapStateToProps, { increment, decrement })(Counter);
+export default connect(mapStateToProps, { increment, decrement, incrementIfOdd, incrementAsync })(Counter);
 //le va a llegar por props el count
 //this.props.count -> state.count
 //this.props.increment -> increment (es una funcion)

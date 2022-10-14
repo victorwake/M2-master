@@ -2,6 +2,8 @@ const { createStore } = require('redux');// Creamos el Store:
 const contador = require('./reducer');//reduce
 const { incremento, decremento, incrementoAsync, incrementoImpar } = require('./actions');
 
+// [...state, new_state] ----> concatenando
+// {...state, contador: 5} ----> copio el statte y reemplazando el valor de contador por 5
 // En esta linea creamos nuestro store. Pasandole como parametro nuestro Reducer
 const store = createStore(contador);
 
