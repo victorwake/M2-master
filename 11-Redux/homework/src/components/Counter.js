@@ -52,3 +52,8 @@ const mapStateToProps = (state) => {
 //Pasamos todas las funciones que dependen de Redux, junto con el propio componente,
 // para que Redux se dé a conocer a este componente.
 export default connect(mapStateToProps, { increment, decrement })(Counter);
+//le va a llegar por props el count
+//this.props.count -> state.count
+//this.props.increment -> increment (es una funcion)
+//this.props.decrement -> decrement (es una funcion)
+

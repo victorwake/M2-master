@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from "../components/Nav.jsx";
 import Cards from "../components/Cards.jsx";
@@ -60,6 +60,7 @@ function App() {
     <Route exact path="/city/:cityId" render={({match}) => <City city={onFilter(match.params.cityId)} />} />
                                {/* {// match trae el valor por url id} */}
   </div>   
+
 );
 }
 
