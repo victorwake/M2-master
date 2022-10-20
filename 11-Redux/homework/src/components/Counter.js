@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { increment, decrement, incrementIfOdd, incrementAsync } from '../actions';
+import { increment, decrement } from '../actions';
 
 class Counter extends Component {
     // Extra Credit
@@ -15,6 +15,7 @@ class Counter extends Component {
             this.props.increment();
         }
         , 3000);
+        // setTimeout(this.props.increment(), 3000);
     };
 
     render() {
@@ -55,7 +56,7 @@ const mapStateToProps = (state) => {
 // Sin esto, este componente es sólo un componente tonto de React.
 //Pasamos todas las funciones que dependen de Redux, junto con el propio componente,
 // para que Redux se dé a conocer a este componente.
-export default connect(mapStateToProps, { increment, decrement, incrementIfOdd, incrementAsync })(Counter);
+export default connect(mapStateToProps, { increment, decrement})(Counter);
 //le va a llegar por props el count
 //this.props.count -> state.count
 //this.props.increment -> increment (es una funcion)
